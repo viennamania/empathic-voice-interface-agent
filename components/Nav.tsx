@@ -1,15 +1,24 @@
 "use client";
 
 import { useLayoutEffect, useState } from "react";
-import HumeLogo from "./logos/Hume";
+
+//import HumeLogo from "./logos/Hume";
+
 import { Button } from "./ui/button";
 import { Moon, Sun } from "lucide-react";
-import Github from "./logos/GitHub";
+
+import { Image } from "lucide-react";
+
+//import Github from "./logos/GitHub";
+
 import pkg from '@/package.json';
 
 export const Nav = () => {
+
+
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  
   useLayoutEffect(() => {
     const el = document.documentElement;
 
@@ -19,6 +28,7 @@ export const Nav = () => {
       setIsDarkMode(false);
     }
   }, []);
+
 
   const toggleDark = () => {
     const el = document.documentElement;
@@ -32,10 +42,21 @@ export const Nav = () => {
         "px-4 py-2 flex items-center h-14 z-50 bg-card border-b border-border"
       }
     >
+    
       <div>
+
+
+        <img src="/logo.webp" className={" h-10 p-1 w-auto"} />
+
+        {/*
         <HumeLogo className={"h-5 w-auto"} />
+        */}
       </div>
+
+      
       <div className={"ml-auto flex items-center gap-1"}>
+
+        {/*
         <Button
           onClick={() => {
             window.open(
@@ -47,11 +68,15 @@ export const Nav = () => {
           variant={"ghost"}
           className={"ml-auto flex items-center gap-1.5"}
         >
+          
           <span>
             <Github className={"size-4"} />
           </span>
+
           <span>Star on GitHub</span>
         </Button>
+        */}
+
         <Button
           onClick={toggleDark}
           variant={"ghost"}
@@ -67,6 +92,7 @@ export const Nav = () => {
           <span>{isDarkMode ? "Light" : "Dark"} Mode</span>
         </Button>
       </div>
+
     </div>
   );
 };
